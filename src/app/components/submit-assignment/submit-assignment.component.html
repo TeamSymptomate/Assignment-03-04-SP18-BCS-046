@@ -1,0 +1,78 @@
+<style>
+    td {
+      padding: 10px;
+    }
+  
+    table {
+      border-spacing: 10px;
+      border-collapse: separate;
+    }
+  
+  </style>
+  
+  <!-- Title group  -->
+<div class="title-group">
+  <h1 class="mat-h1">Submit Your Quiz Here! [For Students]</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+
+  <!-- <table>
+    <tr>
+      <td>No.</td>
+      <td>Name</td>
+      <td>End Date</td>
+      <td>End Time</td>
+      <td>Option</td>
+    </tr>
+    <tr *ngFor="let assignment of assignments; let i=index ">
+      <td>{{i+1}}</td>
+      <td>{{assignment.name}}</td>
+      <td>{{assignment.enddate}}</td>
+      <td>{{assignment.endtime}}</td>
+      <td>
+        <input type="text" [(ngModel)]='studentName' placeholder="Enter Your Name">
+        <br><br>
+        <input type="file" (change)="fileUpload($event)">
+        <br><br>
+        <button (click)="handleSubmit($event, assignment._id)">Upload</button>
+      </td>
+    </tr>
+  </table> -->
+
+  <p *ngIf="assignments.length <= 0" class="no-data">There are no assignments added yet!</p>
+  
+  <div class="container" *ngIf="assignments.length > 0">
+    <div class="mat-elevation-z8">
+      <table  >
+        <tr>
+          <td>No.</td>
+          <td>Name</td>
+          <td>End Date</td>
+          <td>End Time</td>
+          <td>Option</td>
+        </tr>
+        <tr *ngFor="let assignment of assignments; let i=index ">
+          <td>{{i+1}}</td>
+          <td>{{assignment.name}}</td>
+          <td>{{assignment.enddate}}</td>
+          <td>{{assignment.endtime}}</td>
+          <td>
+            <input type="text" [(ngModel)]='studentName' placeholder="Enter Your Name">
+            <br><br>
+            <input type="file" (change)="fileUpload($event)">
+            <br><br>
+            <button (click)="handleSubmit($event, assignment._id)">Upload</button>
+          </td>
+         
+        </tr>
+        
+        
+        <tr mat-header-row ></tr>
+        <tr mat-row ></tr>
+        
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+  

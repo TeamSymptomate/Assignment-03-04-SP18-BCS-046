@@ -1,0 +1,61 @@
+
+<style>
+  .gg {
+    margin: 3%;
+  }
+
+  table {
+    border-spacing: 10px;
+    border-collapse: separate;
+  }
+  .tt{
+   margin: 5%; 
+  }
+
+</style>
+<div class="title-group">
+  <h1 class="mat-h1">Upload the Quiz Here!</h1>
+  <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<div class="container" >
+  <div class="mat-elevation-z8">
+<table>
+  <tr>
+    <td>Select a Deadline</td>
+    <td>Select Time</td>
+    <td>Browse File</td>
+    <td>Name</td>
+    <td>Action</td>
+    
+  </tr>
+  <tr >
+    <td>Date: <input type='date' [(ngModel)]='date'></td>
+    <td >  Time: <input type="time" [(ngModel)]='time'></td>
+    <input type="file" (change)="fileUpload($event)">
+    <td> {{fileName || 'No file Uploaded yet'}} </td>
+    <td> <input type="submit" value="Upload Assignment" (click)="handleSubmit($event)"></td>
+  </tr>
+
+</table>
+  </div>
+</div>
+
+
+<!-- 
+<div class="container" >
+  <div class="mat-elevation-z8">
+    <div class= "gg">
+<input type="file" (change)="fileUpload($event)">
+<br>
+<p>Select a Deadline: </p>
+<p>
+  Date: <input type='date' [(ngModel)]='date'>
+</p>
+<p>
+  Time: <input type="time" [(ngModel)]='time'>
+</p>
+<p>Assignment Name: {{fileName || 'No File Uploaded'}}</p>
+<input type="submit" (click)="handleSubmit($event)">
+</div>
+</div>
+</div> -->
